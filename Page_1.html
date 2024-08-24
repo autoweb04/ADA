@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amin's Driving Academy</title>
+    <link rel="icon" href="\ADA\Images\Logo_Tab.jpg" type="image/x-icon" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      header {
+        background-color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+      header img {
+        max-width: 200px;
+      }
+      nav {
+        background-color: #444;
+        overflow: hidden;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        flex: 1;
+      }
+      nav ul li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      nav ul li a:hover {
+        background-color: #8b0000;
+        color: white;
+      }
+      section {
+        padding: 20px;
+        text-align: center;
+      }
+      section h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: #8b0000;
+      }
+      .reviews,
+      .contact,
+      .why-choose-us,
+      .packages,
+      .perks {
+        background-color: white;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 1000px;
+      }
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .card {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: 300px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+      .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px 8px 0 0;
+      }
+      .card p {
+        font-size: 1em;
+        line-height: 1.5;
+        color: #333;
+        font-weight: bold;
+      }
+      .contact p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+        color: #333;
+        font-weight: bold;
+      }
+      .contact a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #8b0000;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 1.2em;
+      }
+      @media (max-width: 768px) {
+        .card-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        nav ul {
+          flex-direction: column;
+        }
+        nav ul li {
+          flex: none;
+        }
+      }
+      .slideshow-container {
+        position: relative;
+        max-width: 1000px;
+        margin: auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+      .mySlides {
+        display: none;
+        padding: 20px;
+        text-align: center;
+      }
+      .mySlides img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .mySlides .text {
+        font-size: 1.2em;
+        margin-top: 10px;
+        color: #333;
+        font-weight: bold;
+      }
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 40px;
+        margin-top: -20px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        outline: none;
+        transition: background-color 0.3s ease;
+        text-align: center;
+        line-height: 40px;
+      }
+      .prev {
+        left: 10px;
+      }
+      .next {
+        right: 10px;
+      }
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(139, 0, 0, 0.8);
+      }
+      .dot-container {
+        text-align: center;
+        padding: 20px;
+      }
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+      .active,
+      .dot:hover {
+        background-color: #8b0000;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="\ADA\Images\ADA_Logo_Org.jpg" alt="Amin's Driving Academy" />
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#why-choose-us">Why Choose Us</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#perks">Perks/Services</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section id="why-choose-us" class="why-choose-us">
+      <h2>Why Choose Us</h2>
+      <p>
+        At Amin's Driving Academy, we offer professional, patient, and
+        personalized driving lessons that cater to your individual needs. Our
+        experienced instructors are dedicated to helping you become a confident
+        and safe driver. With our modern teaching techniques and flexible
+        scheduling, you can learn at your own pace.
+      </p>
+    </section>
+
+    <section id="packages" class="packages">
+      <h2>Package Deal and Pricing</h2>
+      <div class="card-container">
+        <div class="card">
+          <p>
+            <strong>Single Lesson (1 hour):</strong> £32 (also subject to
+            distance)
+          </p>
+        </div>
+        <div class="card">
+          <p>
+            <strong>5 Lesson Package:</strong> £155 (also subject to distance)
+          </p>
+        </div>
+        <div class="card">
+          <p>
+            <strong>10 Lesson Package:</strong> £310 (also subject to distance)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="perks" class="perks">
+      <h2>Perks/Services</h2>
+      <div class="card-container">
+        <div class="card">
+          <p>Booking Test</p>
+        </div>
+        <div class="card">
+          <p>Mock Test for your areas</p>
+        </div>
+        <div class="card">
+          <p>Last-Minute Test Appointments</p>
+        </div>
+        <div class="card">
+          <p>Teen classes</p>
+        </div>
+        <div class="card">
+          <p>ADI Training</p>
+        </div>
+        <div class="card">
+          <p>Advanced Driving Course</p>
+        </div>
+        <div class="card">
+          <p>Automatic</p>
+        </div>
+        <div class="card">
+          <p>Beginner Lessons</p>
+        </div>
+        <div class="card">
+          <p>Early Test Bookings</p>
+        </div>
+        <div class="card">
+          <p>Intensive Course</p>
+        </div>
+        <div class="card">
+          <p>Motorway Lessons</p>
+        </div>
+        <div class="card">
+          <p>Refresher Courses</p>
+        </div>
+        <div class="card">
+          <p>Pay as you go</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+      <h2>Student Success Stories</h2>
+      <div class="card-container">
+        <div class="card">
+          <img src="\ADA\Images\IMG_1_Card.webp" alt="Review Image 1" />
+          <p>★★★★★</p>
+          <p>
+            Great lessons! The instructor was very patient and knowledgeable.
+            Highly recommended!
+          </p>
+        </div>
+        <div class="card">
+          <img src="\ADA\Images\IMG_2_Card.webp" alt="Review Image 2" />
+          <p>★★★★★</p>
+          <p>
+            Excellent driving school! Passed my test on the first try. The
+            lessons were thorough and fun.
+          </p>
+        </div>
+        <div class="card">
+          <img src="\ADA\Images\IMG_4_Card.webp" alt="Review Image 3" />
+          <p>★★★★★</p>
+          <p>
+            Amazing experience! The automatic driving lessons were very
+            effective. Thank you, ADA!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="slideshow" class="slideshow-container">
+      <h2>Google Reviews</h2>
+      <div class="mySlides">
+        <img src="\ADA\Images\pfp_Z_Pink.png" alt="Profile 1" />
+        <p class="text">
+          "Amin is a great instructor, he creates a positive learning
+          environment, which allows you to feel confident within your driving
+          skills. I highly recommend him as an instructor, I passed first time
+          thanks to him ! " - Zaynah
+        </p>
+      </div>
+      <div class="mySlides">
+        <img src="\ADA\Images\pfp_Abu_Purpule.png" alt="Profile 2" />
+        <p class="text">
+          "Amin driving academy was a great experience of enhancing skills of
+          being a safe driver and being a confident driver in the road. Amin
+          driving instructor gives good advice on how to make easy ways of
+          improving on right decision making to overcome any obstacles and
+          always implements new stuff to make an easy way to drive in any sort
+          of road. This instructor will save your money and also treat you very
+          well." - Abu-Bakr Bahar
+        </p>
+      </div>
+      <div class="mySlides">
+        <img src="\ADA\Images\Akeel_pfp_Orange.png" alt="Profile 3" />
+        <p class="text">
+          "Amin is a great driving instructor, he is very patient and has great
+          peoples skills and vast knowledge on best practices when it comes to
+          driving. He was very helpful and I would definitely recommend him to
+          anyone who is looking for an instructor! " - Akeel Malik
+        </p>
+      </div>
+      <div class="mySlides">
+        <img src="\ADA\Images\k_Green_pfp.png" alt="Profile 4" />
+        <p class="text">
+          "Amin is a lifesaver! After having two mediocre instructors, he came in and saved the day. He's super patient and really knows his stuff. He helped me pass my driving test on the first try with only four minor faults! He's all about safety and makes learning fun. If you need a driving instructor, Amin's your guy!"
+           -
+          Koohinur Rahman
+        </p>
+      </div>
+      <div class="mySlides">
+        <img src="\ADA\Images\pfp_T_grey.png" alt="Profile 5" />
+        <p class="text">
+          "Amin is an incredible driving instructor! He's got such a calm and friendly vibe. He really helped boost my confidence behind the wheel and shared tons of valuable tips that helped me pass my test on my first try. I highly recommend him!
+          " - Tan
+        </p>
+      </div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </section>
+
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <p>
+        Call or text us at <strong>07445404676</strong> to get a quote for
+        lessons. You can also reach us via WhatsApp.
+      </p>
+      <a href="https://wa.me/447445404676">Contact via WhatsApp</a>
+    </section>
+
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+  </body>
+</html>
